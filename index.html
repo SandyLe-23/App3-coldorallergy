@@ -143,14 +143,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <div id="content" class="w3-container">
 		<p>Are your symptoms seasonal or chronic?</p>
 		
-		<a href="#results" class="w3-btn w3-black"> Yes </a> <!-- Button to answer "Yes" -->
+		<a href="#end" class="w3-btn w3-black"> Yes </a> <!-- Button to answer "Yes" -->
 		
-		<a href="#results" class="w3-btn w3-black"> No </a> <!-- Button to answer "No" -->
+		<a href="#end" class="w3-btn w3-black"> No </a> <!-- Button to answer "No" -->
 		
 	</div>
 </div>	
 
-<div class="page" id="results">
+<div class="page" id="end">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Results</h1>
 	</div>
@@ -161,7 +161,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<p id="results"> Thank you for taking this survey! Press the "Results" button to generate your results. </p>
 	
 	<script>
-		var resultText = document.getElementById("results");
 		document.getElementById("results").innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent;
 	</script>
 		
