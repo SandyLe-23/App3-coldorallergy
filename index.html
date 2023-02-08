@@ -38,7 +38,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <script>
         var allergy_count = 0;
         var cold_count = 0;
-	var resultText = document.getElementById("results");
 
 
         function allergyAdd(){
@@ -51,7 +50,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             cold_count = cold_count + 1;
         }
 
-  </script>
+</script>
 
 
 
@@ -157,9 +156,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 <div id="content" class="w3-container">
-		<a href="#results" class="w3-btn w3-black"> Get Results </a> <!-- Button to answer generate results -->
+		<a href="#results" class="w3-btn w3-black"> Results </a> <!-- Button to answer generate results -->
 		
-		<p> resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; </p>
+		<p id="results"> Thank you for taking this survey! Press the "Results" button to generate your results. </p>
+	
+	<script>
+		var resultText = document.getElementById("results");
+		document.getElementById("results").innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent;
+	</script>
 		
 		<a href="#content" class="w3-btn w3-black"> Restart </a> <!-- Button to go back to beginning -->
 	
