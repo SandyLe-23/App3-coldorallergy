@@ -40,18 +40,18 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         var cold_count = 0; //set cold count to 0
 
         function allergyAdd(){
-            allergy_count = allergy_count + 1; //button with onclick allergy pressed gets added to allergy count
-		alert(allergy_count); //notification when allergy button is pressed
+            allergy_count = allergy_count + 1; //question answered relates to allergy, add 1 to allergy count
+		alert(allergy_count); //notification of count when question answered relates to allergy
         }
 
         function coldAdd(){
-            cold_count = cold_count + 1;
+            cold_count = cold_count + 1; //question answered relates to cold, add 1 to cold count
         }
 	
 	function getResults(){
-		var allergyPercent = (allergy_count / 4) * 100;
-		var coldPercent = (cold_count / 4) * 100;
-		document.getElementById("results").innerHTML = "Probability it is allergies = " + allergyPercent + "<br> Probability it is a cold = " + coldPercent; 
+		var allergyPercent = (allergy_count / 4) * 100; //calculate percent chance of allergy by using allergy count and dividing by the number of questions times 100
+		var coldPercent = (cold_count / 4) * 100; //calculate percent chance of cold by using cold count and dividing by the number of questions times 100
+		document.getElementById("results").innerHTML = "Probability it is allergies = " + allergyPercent + "<br> Probability it is a cold = " + coldPercent; //connects to result page to display percent chance of both allergy and cold
 	}
 		
 </script>
@@ -84,7 +84,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <div id="header" class="w3-container w3-flat-carrot">
 	<h1>Cold or Allergies?</h1>
 </div>
-	
+
+<!-- Opening page of app -->
 <div id="content" class="w3-container">
 	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
 	
@@ -94,6 +95,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
+<!-- first page with question 1-->
 <div class="page" id="one">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
@@ -109,13 +111,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     	</div>
 </div>
 
+<!-- second page with question 2 -->
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
 	</div>
 	
 <div id="content" class="w3-container">
-		<p>Do you have a fever?</p>
+		<p>Do you have a fever?</p> <!-- second question asked after answering the first question -->
 		
 		<a href="#three" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a> <!-- Button to answer "Yes" -->
 		
@@ -124,13 +127,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 </div>	
 
+<!-- third page with question 3 -->
 <div class="page" id="three">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1>
 	</div>
 	
 <div id="content" class="w3-container">
-		<p>Do you have a sore throat?</p>
+		<p>Do you have a sore throat?</p> <!-- third question asked after answering the second question -->
 		
 		<a href="#four" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a> <!-- Button to answer "Yes" -->
 		
@@ -139,13 +143,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 </div>	
 
+<!-- fourth page with question 4 -->
 <div class="page" id="four">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1>
 	</div>
 	
 <div id="content" class="w3-container">
-		<p>Are your symptoms seasonal or chronic?</p>
+		<p>Are your symptoms seasonal or chronic?</p> <!-- fourth question asked after answering the third question -->
 		
 		<a href="#end" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a> <!-- Button to answer "Yes" -->
 		
@@ -154,6 +159,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 </div>	
 
+<!-- final page displaying results -->
 <div class="page" id="end">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Results</h1>
@@ -163,7 +169,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		
 		<p id="results"></p>
 		
-		<button onclick="getResults()">Results</button>
+		<button onclick="getResults()">Results</button> <!-- button pressed to generate results -->
 		
 	</div>
 </div>	
