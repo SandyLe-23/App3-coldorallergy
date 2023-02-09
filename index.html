@@ -39,7 +39,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         var allergy_count = 0;
         var cold_count = 0;
 
-
         function allergyAdd(){
             allergy_count = allergy_count + 1;
 		alert(allergy_count);
@@ -50,6 +49,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             cold_count = cold_count + 1;
         }
 
+	var resultText = document.getElementById("results");
+	resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
 </script>
 
 
@@ -98,9 +99,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <div id="content" class="w3-container">
         <p>Are your eyes watery or itchy?</p> <!-- first question asked to user after pressing "Get Started" -->
 		
-	<a href="#two" class="w3-btn w3-black"> Yes </a> <!-- Button to answer "Yes" -->
+	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a> <!-- Button to answer "Yes" -->
 		
-	<a href="#two" class="w3-btn w3-black"> No </a> <!-- Button to answer "No" -->
+	<a href="#two" onclick="coldAdd();" class="w3-btn w3-black"> No </a> <!-- Button to answer "No" -->
 		
     	</div>
 </div>
@@ -113,9 +114,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <div id="content" class="w3-container">
 		<p>Do you have a fever?</p>
 		
-		<a href="#three" class="w3-btn w3-black"> Yes </a> <!-- Button to answer "Yes" -->
+		<a href="#three" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a> <!-- Button to answer "Yes" -->
 		
-		<a href="#three" class="w3-btn w3-black"> No </a> <!-- Button to answer "No" -->
+		<a href="#three" onclick="allergyAdd();" class="w3-btn w3-black"> No </a> <!-- Button to answer "No" -->
 		
 	</div>
 </div>	
@@ -128,9 +129,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <div id="content" class="w3-container">
 		<p>Do you have a sore throat?</p>
 		
-		<a href="#four" class="w3-btn w3-black"> Yes </a> <!-- Button to answer "Yes" -->
+		<a href="#four" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a> <!-- Button to answer "Yes" -->
 		
-		<a href="#four" class="w3-btn w3-black"> No </a> <!-- Button to answer "No" -->
+		<a href="#four" onclick="allergyAdd();" class="w3-btn w3-black"> No </a> <!-- Button to answer "No" -->
 		
 	</div>
 </div>	
@@ -143,9 +144,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <div id="content" class="w3-container">
 		<p>Are your symptoms seasonal or chronic?</p>
 		
-		<a href="#end" class="w3-btn w3-black"> Yes </a> <!-- Button to answer "Yes" -->
+		<a href="#end" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a> <!-- Button to answer "Yes" -->
 		
-		<a href="#end" class="w3-btn w3-black"> No </a> <!-- Button to answer "No" -->
+		<a href="#end" onclick="coldAdd();" class="w3-btn w3-black"> No </a> <!-- Button to answer "No" -->
 		
 	</div>
 </div>	
@@ -156,15 +157,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 <div id="content" class="w3-container">
-		<a href="#results" class="w3-btn w3-black"> Results </a> <!-- Button to answer generate results -->
 		
 		<p id="results"> Thank you for taking this survey! Press the "Results" button to generate your results. </p>
 	
-	<script>
-		document.getElementById("results").innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent;
-	</script>
-		
+		<a href="#results" class="w3-btn w3-black"> Results </a> <!-- Button to answer generate results -->
+	
 		<a href="#content" class="w3-btn w3-black"> Restart </a> <!-- Button to go back to beginning -->
+		
+	</div>
+</div>	
 	
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
