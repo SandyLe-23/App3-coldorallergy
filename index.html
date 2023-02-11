@@ -20,7 +20,7 @@ Brief Description of Goal of Code:
 The goal of this code is to create an app that asks the patient questions to determine if they have a cold or allergies.
  
 Known Issues:
-blah, blah, blah, blah
+Results page wouldn't give an output. GitHub rendering app takes a while.
 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
@@ -49,8 +49,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         }
 	
 	function getResults(){
-	    var allergyPercent = (allergy_count / 4) * 100; //calculate percent chance of allergy by using allergy count and dividing by the number of questions times 100
-	    var coldPercent = (cold_count / 4) * 100; //calculate percent chance of cold by using cold count and dividing by the number of questions times 100
+	    var allergyPercent = (allergy_count / 4) * 100; //calculate percent chance of allergy using allergy count and dividing by the # of questions times 100
+	    var coldPercent = (cold_count / 4) * 100; //calculate percent chance of cold using cold count and dividing by the # of questions times 100
 		document.getElementById("results").innerHTML = "Probability it is allergies = " + allergyPercent + "<br> Probability it is a cold = " + coldPercent; //connects to result page to display percent chance of both allergy and cold
 	}
 		
@@ -167,7 +167,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		
-		<p id="results"></p>
+		<p id="results"></p> <!-- where result is displayed -->
 		
 		<button onclick="getResults()">Results</button> <!-- button pressed to generate results -->
 		
